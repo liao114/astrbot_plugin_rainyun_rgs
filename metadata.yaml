@@ -1,0 +1,6 @@
+name: astrbot_plugin_rainyun_rgs
+display_name: 雨云游戏云管理
+desc: 通过雨云 API 查询游戏云(RGS)实例列表与详情，支持开关机、重启与积分自动续费（剩 7 天时先续 30 天，积分不足退回 7 天）。
+version: v1.1.0
+author: CatGirl
+repo: https://github.com/

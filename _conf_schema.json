@@ -1,0 +1,86 @@
+{
+    "api_key": {
+        "description": "🔑 雨云 API 密钥",
+        "type": "string",
+        "default": "",
+        "hint": "在雨云控制台「用户中心 → API密钥」创建，插件通过 X-Api-Key 请求头调用接口。"
+    },
+    "base_url": {
+        "description": "🌐 API 地址",
+        "type": "string",
+        "default": "https://api.v2.rainyun.com",
+        "hint": "一般无需修改。"
+    },
+    "admin_only": {
+        "description": "👮 仅管理员可用",
+        "type": "bool",
+        "default": true,
+        "hint": "开启后只有 AstrBot 全局管理员能使用全部指令（开机/关机/重启强制要求管理员）。"
+    },
+    "allow_power_ops": {
+        "description": "⚡ 允许开机/关机/重启",
+        "type": "bool",
+        "default": true,
+        "hint": "关闭后仅保留查询功能，防止误触。"
+    },
+    "default_rgs_id": {
+        "description": "🎯 默认实例 ID",
+        "type": "string",
+        "default": "",
+        "hint": "指令不带参数时使用的实例 ID；留空且账号只有一个实例时会自动使用它。"
+    },
+    "auto_renew_enabled": {
+        "description": "💠 开启自动积分续费",
+        "type": "bool",
+        "default": true,
+        "hint": "开启后插件会定时检查实例到期时间，剩余不足阈值时用积分自动续费。"
+    },
+    "renew_threshold_days": {
+        "description": "⚖️ 触发阈值（剩余天数）",
+        "type": "int",
+        "default": 7,
+        "hint": "剩余天数小于等于该值时触发续费，默认 7 天。"
+    },
+    "renew_primary_days": {
+        "description": "1️⃣ 首选续费天数",
+        "type": "int",
+        "default": 30,
+        "hint": "雨云积分续费只支持 7 天或 30 天，默认先续 30 天（一个月）。"
+    },
+    "renew_fallback_days": {
+        "description": "2️⃣ 积分不足时退回天数",
+        "type": "int",
+        "default": 7,
+        "hint": "首选续费失败（通常是积分不足）时退回到该天数，默认 7 天。"
+    },
+    "renew_interval_hours": {
+        "description": "⏱️ 检查间隔（小时）",
+        "type": "int",
+        "default": 6,
+        "hint": "后台自动检查的间隔，默认 6 小时。"
+    },
+    "renew_cooldown_hours": {
+        "description": "🧊 失败冷却（小时）",
+        "type": "int",
+        "default": 6,
+        "hint": "同一实例尝试续费后，冷却时间内不再重复调用接口，避免刷爆 API。"
+    },
+    "renew_instance_ids": {
+        "description": "🎯 监控实例 ID（逗号分隔）",
+        "type": "string",
+        "default": "",
+        "hint": "留空则使用默认实例 ID；可填多个，例如 89403,89404。"
+    },
+    "allow_renew_ops": {
+        "description": "💳 允许手动积分续费",
+        "type": "bool",
+        "default": true,
+        "hint": "关闭后 /雨云续费 不可用，自动续费不受影响。"
+    },
+    "notify_umo": {
+        "description": "📨 续费结果推送会话 UMO",
+        "type": "string",
+        "default": "",
+        "hint": "填写 unified_msg_origin（如 wecom:GroupMessage:123456）后，续费成功或失败会主动推送；留空只写日志。"
+    }
+}
